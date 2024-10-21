@@ -9,7 +9,7 @@
   
   <script lang="ts">
   import { defineComponent } from 'vue';
-  import { IProduto } from '@/interface/IProduto';
+
   import Carousel from "@/components/Carousel.vue"
 
   export default defineComponent({

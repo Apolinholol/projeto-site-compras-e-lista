@@ -1,4 +1,4 @@
 export default interface IRelacaoProdutos{
     nome: string
-    done: false
+    done: boolean
 }
