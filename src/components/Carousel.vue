@@ -1,8 +1,8 @@
 <template>
 
-    <div class="container " style="border: 1px solid;">
-        <div id="carouselExampleAutoplaying" class="carousel slide mx-auto d-flex mt-5 img-fluid" data-bs-ride="carousel" style="max-width: 500px; max-height:500px">
-            <div class="carousel-inner">
+    <div class="container mt-5 " style="max-width:500px;">
+        <div id="carouselExampleAutoplaying" class="carousel slide mx-auto d-flex mt-5 img-fluid" data-bs-ride="carousel" style="max-width: 700px; max-height:500px">
+            <div class="carousel-inner rounded">
                 <div class="carousel-item active">
                     <img src="../assets/4060.jpg" class="d-block w-100" alt="...">
                 </div>
@@ -40,3 +40,10 @@
    }
 </style>
 
+<style scoped>
+.carousel {
+    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 10px 2px rgba(255, 174, 0, 0.5);
+  
+}
+</style>

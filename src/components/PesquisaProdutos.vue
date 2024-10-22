@@ -32,10 +32,10 @@
           </td>
           <td :class="{ 'text-decoration-line-through': produto.done }">{{ produto.nome }}</td>
           <td>
-            <button class="fs-5" @click="removerProduto(produto.nome)">
+            <button class="fs-5 me-3" @click="removerProduto(produto.nome)">
               <i class="bi bi-trash3-fill"></i> 
             </button> 
-            <button class="fs-5" @click="alterarProduto(produto)">
+            <button class="fs-5 ms-3" @click="alterarProduto(produto)">
               <i class="bi bi-pen"></i> 
             </button>
           </td>
