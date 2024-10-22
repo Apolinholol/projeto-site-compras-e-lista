@@ -2,11 +2,12 @@
 
 
     <MenuNav/>
-
+    <!-- <Catalogo/> -->
 </template>
 
 <script lang="ts">
     import MenuNav from "@/components/MenuNav.vue"
+    import Catalogo from "@/components/Catalogo.vue"
     import ListaDeProdutos from "@/components/ListaDeProdutos.vue"
     import { defineComponent } from 'vue';
 
