@@ -5,7 +5,7 @@
             <img  v-if="produto.img"  :src="produto.img" class="card-img-top " style='min-width:150px; max-width:250px; min-height:100px;max-height:300px;object-fit:cover;' >
           <h5 class="card-title mt-2 mx-auto fs-4 text-start border-bottom p-2" style='max-width:250px;' > <strong> {{produto.nome}} </strong></h5>           
           <p class="card-text text-start fs-3 fw-bold" style='max-width:250px;'>{{produto.descricao}}</p>
-          <a href="#" class="btn btn-primary mb-3">Adicionar ao carrinho</a>
+          <a href="#" class="btn btn-primary mb-3" >Adicionar ao carrinho</a>
         </div>
       </div>
     </div>
@@ -21,9 +21,9 @@
 
                 const produtos = ref<IProduto[]>([                              
                                                 //Por estar usando o Vite , a importacao do caminho da imagem é assim
-                    { id: 1, nome: 'Placa de Video RX 7600', descricao: 'R$ 1800,00', img: require('@/assets/rx7600.png') },
-                    { id: 2, nome: 'Placa de Video RX 6650XT', descricao: 'R$ 1650,00', img: require('@/assets/rx6650.png') },
-                    { id: 3, nome: 'Placa de Video RTX 4060', descricao: 'R$ 2100,00', img: require('../assets/rtx4060.png') },
+                    { id: 1, nome: 'Placa de Video RX 7600', descricao: 'R$ 1800,00', img: require('@/assets/rx7600.png'),quantidade: 1},
+                    { id: 2, nome: 'Placa de Video RX 6650XT', descricao: 'R$ 1650,00', img: require('@/assets/rx6650.png'),quantidade: 1},
+                    { id: 3, nome: 'Placa de Video RTX 4060', descricao: 'R$ 2100,00', img: require('../assets/rtx4060.png'),quantidade: 1},
                 ])                 
 
                 const carregarProdutos = () => {

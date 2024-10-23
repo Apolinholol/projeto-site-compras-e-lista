@@ -25,7 +25,7 @@
                     <router-link class="nav-link" to="/">Home</router-link> 
                   </li>
                   <li class="nav-item">
-                    <router-link class="nav-link" to="/carrinho">Carrinho</router-link>
+                    <router-link class="nav-link" to="/carrinho">Carrinho({{ produtosNoCarrinho.length }})</router-link>
                   </li>
                 </ul>
               </div>
@@ -55,10 +55,23 @@
 
 <script>
     import ListaDeProdutos from '../components/ListaDeProdutos.vue'
-    import { defineComponent } from 'vue';
+    import { defineComponent,computed } from 'vue';
+    import { useStore } from 'vuex';
+
 
     export default defineComponent({
         name:"AppMenuNav",
-        components:{ListaDeProdutos}
+        components:{ListaDeProdutos},
+        setup(){
+
+          const store = useStore();
+          const produtosNoCarrinho = computed(() =>{
+            return store.state.produtosCarrinho
+          })
+
+          return{
+            produtosNoCarrinho
+          }
+        }
     })
 </script>

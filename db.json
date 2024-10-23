@@ -4,49 +4,57 @@
         "id": 1,
         "nome": "RTX 3060",
         "descricao": "R$ 6000,00",
-        "img": "rtx3060.png"
+        "img": "rtx3060.png",
+        "quantidade": 1
       },
       {
         "id": 2,
         "nome": "RTX 3050",
         "descricao": "R$ 4000,00",
-        "img": "rtx3050.png"
+        "img": "rtx3050.png",
+        "quantidade": 1
       },
       {
         "id": 3,
         "nome": "RTX 4060",
         "descricao": "R$ 6500,00",
-        "img": "rtx4060.png"
+        "img": "rtx4060.png",
+        "quantidade": 1
       },
       {
         "id": 4,
         "nome": "Rx 6600",
         "descricao": "R$ 4500,00",
         "img": "rx6600.png"
-      },
+,
+"quantidade": 1      },
       {
         "id": 5,
         "nome": "Rx 6650",
         "descricao": "R$ 5000,00",
         "img": "rx6650.png"
-      },
+,
+"quantidade": 1      },
       {
         "id": 6,
         "nome": "Rx 7600",
         "descricao": "R$ 5500,00",
         "img": "rx7600.png"
-      },
+,
+"quantidade": 1      },
       {
         "id": 7,
         "nome": "RTX 3060 Ti",
         "descricao": "R$ 4800,00",
         "img": "3060ti.jpg"
-      },
+,
+"quantidade": 1      },
       {
         "id": 8,
         "nome": "RTX 4060",
         "descricao": "R$ 4800,00",
         "img": "4060.jpg"
-      }
+  ,
+  "quantidade": 1    }
     ]
 }

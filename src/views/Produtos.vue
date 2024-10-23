@@ -4,8 +4,6 @@
     <h1>Os melhores produtos você encontra aqui!</h1>
 
             <Carousel/>
-
-            <CardRecomend/>
             <CardPadrao/>
 
    
@@ -18,12 +16,11 @@
   import { defineComponent } from 'vue';
 
   import Carousel from "@/components/Carousel.vue"
-  import CardRecomend from "@/components/CardRecomend.vue"
   import CardPadrao from "@/components/CardPadrao.vue"
 
   export default defineComponent({
   name: 'AppProdutos',
-  components:{Carousel,CardPadrao, CardRecomend},
+  components:{Carousel,CardPadrao},
 })
 </script>
 <style scoped>

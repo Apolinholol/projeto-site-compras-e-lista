@@ -3,4 +3,5 @@ export default interface IProduto {
     nome: string;
     descricao: string
     img: string;
+    quantidade: number
 }
