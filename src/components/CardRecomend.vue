@@ -2,7 +2,7 @@
     <div class=" d-flex flex-row justify-content-center mx-auto">
     <div class="card mx-5 mt-5 " style="width: 18rem;" v-for="(produto,index) in produtos" :key="index">
         <div class="card-body ">
-            <img  v-if="produto.img"  :src="produto.img" class="card-img-top " style='min-width:250px; max-width:250px; min-height:300px;max-height:300px;object-fit:cover;' >
+            <img  v-if="produto.img"  :src="produto.img" class="card-img-top " style='min-width:150px; max-width:250px; min-height:100px;max-height:300px;object-fit:cover;' >
           <h5 class="card-title mt-2 mx-auto fs-4 text-start border-bottom p-2" style='max-width:250px;' > <strong> {{produto.nome}} </strong></h5>           
           <p class="card-text text-start fs-3 fw-bold" style='max-width:250px;'>{{produto.descricao}}</p>
           <a href="#" class="btn btn-primary mb-3">Adicionar ao carrinho</a>

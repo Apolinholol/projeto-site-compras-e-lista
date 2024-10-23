@@ -1,5 +1,5 @@
 {
-    "prodtuos":[
+    "produtos":[
         {
             "id":1,
             "nome": "RTX 3060",
@@ -29,6 +29,60 @@
             "id":6,
             "nome": "Rx 7600",
             "img": "./src/assets/rtx7600.png"
+        },
+        {
+            "id": 7,
+            "nome": "Placa de Vídeo RX 580",
+            "descricao": "R$ 1200,00",
+            "imagem": "path/to/rx580.png"
+        },
+        {
+            "id": 8,
+            "nome": "Placa de Vídeo GTX 1660 Super",
+            "descricao": "R$ 1400,00",
+            "imagem": "path/to/gtx1660super.png"
+        },
+        {
+            "id": 9,
+            "nome": "Placa de Vídeo RTX 4090",
+            "descricao": "R$ 8000,00",
+            "imagem": "path/to/rtx4090.png"
+        },
+        {
+            "id": 10,
+            "nome": "Placa de Vídeo RTX 3060 Ti",
+            "descricao": "R$ 1800,00",
+            "imagem": "path/to/rtx3060ti.png"
+        },
+        {
+            "id": 11,
+            "nome": "Placa de Vídeo RX 5700 XT",
+            "descricao": "R$ 1500,00",
+            "imagem": "path/to/rx5700xt.png"
+        },
+        {
+            "id": 12,
+            "nome": "Placa de Vídeo GTX 1650",
+            "descricao": "R$ 1000,00",
+            "imagem": "path/to/gtx1650.png"
+        },
+        {
+            "id": 13,
+            "nome": "Placa de Vídeo RTX 2080 Super",
+            "descricao": "R$ 2900,00",
+            "imagem": "path/to/rtx2080super.png"
+        },
+        {
+            "id": 14,
+            "nome": "Placa de Vídeo RX 5500 XT",
+            "descricao": "R$ 1300,00",
+            "imagem": "path/to/rx5500xt.png"
+        },
+        {
+            "id": 15,
+            "nome": "Placa de Vídeo RTX 2070",
+            "descricao": "R$ 2400,00",
+            "imagem": "path/to/rtx2070.png"
         }
 ]
 }

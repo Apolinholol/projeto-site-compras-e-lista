@@ -6,6 +6,7 @@
             <Carousel/>
 
             <CardRecomend/>
+            <CardPadrao/>
 
    
      </div>
@@ -18,10 +19,11 @@
 
   import Carousel from "@/components/Carousel.vue"
   import CardRecomend from "@/components/CardRecomend.vue"
+  import CardPadrao from "@/components/CardPadrao.vue"
 
   export default defineComponent({
   name: 'AppProdutos',
-  components:{Carousel, CardRecomend},
+  components:{Carousel,CardPadrao, CardRecomend},
 })
 </script>
 <style scoped>
@@ -29,11 +31,12 @@ h1{
   color:orange;
 }
 .principal{
-background-image: url('../assets/universo.jpg'); 
+background-image: url('../assets/niverso.jpg'); 
 background-size: cover;
-background-attachment: fixed; /* Fixa a imagem ao fazer scroll */
+background-attachment: fixed; 
 background-position: center;
 background-repeat: no-repeat;
 min-height: 100vh; 
+z-index: -1;
 }
 </style>
