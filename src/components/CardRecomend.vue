@@ -1,55 +1,78 @@
 <template>
-    <div class=" d-flex flex-row justify-content-center mx-auto">
-    <div class="card mx-5 mt-5 " style="width: 18rem;" v-for="(produto,index) in produtos" :key="index">
-        <div class="card-body ">
-            <img  v-if="produto.img"  :src="produto.img" class="card-img-top " style='min-width:150px; max-width:250px; min-height:100px;max-height:300px;object-fit:cover;' >
-          <h5 class="card-title mt-2 mx-auto fs-4 text-start border-bottom p-2" style='max-width:250px;' > <strong> {{produto.nome}} </strong></h5>           
-          <p class="card-text text-start fs-3 fw-bold" style='max-width:250px;'>{{produto.descricao}}</p>
-          <a href="#" class="btn btn-primary mb-3" >Adicionar ao carrinho</a>
+    <div class="container">
+      <div class="row ms-5">
+        <div class="col-12 col-md-4 mt-5 ps-5" v-for="(produto, index) in produtosAleatorios" :key="index">
+          <div class="card" style="max-width: 250px;">
+            <div class="card-body ps-2">
+              <img v-if="produto.img" :src="produto.img" class="card-img-top" style="max-width: 200px; max-height: 250px;">
+              <h5 class="card-title mt-2 mx-auto fs-4 text-start border-bottom p-2"><strong>{{ produto.nome }}</strong></h5>
+              <p class="card-text text-start fs-3 fw-bold" style="max-width: 250px;">{{ produto.descricao }}</p>
+              <a v-if="!estaNoCarrinho(produto)" class="btn btn-primary mb-3" @click="adicionarAoCarrinho(produto)">Adicionar ao carrinho</a>
+              <a v-else class="btn btn-outline-primary mb-3" @click="removerDoCarrinho(produto.id)">Remover do Carrinho</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-</template>
-<script lang="ts">
-    import { defineComponent, ref,onMounted } from 'vue';
-    import IProduto from '@/interface/IProduto'
-
-    export default defineComponent(
-        {
-            name:"AppCardRecomend",
-            setup(){
-
-                const produtos = ref<IProduto[]>([                              
-                                                //Por estar usando o Vite , a importacao do caminho da imagem é assim
-                    { id: 1, nome: 'Placa de Video RX 7600', descricao: 'R$ 1800,00', img: require('@/assets/rx7600.png'),quantidade: 1},
-                    { id: 2, nome: 'Placa de Video RX 6650XT', descricao: 'R$ 1650,00', img: require('@/assets/rx6650.png'),quantidade: 1},
-                    { id: 3, nome: 'Placa de Video RTX 4060', descricao: 'R$ 2100,00', img: require('../assets/rtx4060.png'),quantidade: 1},
-                ])                 
-
-                const carregarProdutos = () => {
-                    produtos.value
-                }
-
-                onMounted(() => {
-                carregarProdutos();
-                });
-
-                return{
-                    produtos
-                }
-            }
-        }
-    )
-
-</script>
-<style scoped>
-.card {
-    transition: transform 0.3s ease;
-    box-shadow: 0px 4px 10px 2px rgba(69, 2, 255, 0.5);
+  </template>
   
-}
-.card:hover{
+  <script lang="ts">
+  import { defineComponent, ref, onMounted, computed } from 'vue';
+  import IProduto from '@/interface/IProduto';
+  import { useStore } from 'vuex';
+  
+  export default defineComponent({
+    name: 'AppCardPadrao',
+    props:{
+        adicionarAoCarrinho: {
+        type: Function,
+        required: true
+        },
+        removerDoCarrinho: {
+        type: Function,
+        required: true
+        }
+    },  
+    setup() {
+      const produtos = ref<IProduto[]>([]);
+      const store = useStore()
 
-        transform: scale(1.1);
+      const embaralharArray = (array: IProduto[]) => {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      };
+  
+      const produtosAleatorios = computed(() => {
+        const produtosEmbaralhados = embaralharArray([...produtos.value]);
+        return produtosEmbaralhados.slice(0, 3); // Retorna os 3 primeiros produtos do array embaralhado
+      });
+      const estaNoCarrinho = (produto : IProduto )=> {
+          return store.state.produtosCarrinho.find( (item : IProduto) => item.id == produto.id)  
+        }
+      const buscarProdutos = async () => {
+        const response = await fetch('http://localhost:3000/produtos');
+        const data = await response.json();
+        produtos.value = data.map((produto :IProduto)=> ({
+          ...produto,
+          img: require(`@/assets/${produto.img}`)
+        }));
+      };
+  
+      onMounted(() => {
+        buscarProdutos();
+      });
+  
+      return {
+        produtos,
+        produtosAleatorios,
+        buscarProdutos,
+        estaNoCarrinho
+       
+      };
     }
-</style>
+  });
+  </script>
+  

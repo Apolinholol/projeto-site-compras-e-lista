@@ -1,5 +1,7 @@
 <template>
-  <CardRecomend/>
+  <CardRecomend 
+  :adicionarAoCarrinho="adicionarAoCarrinho"
+  :removerDoCarrinho="removerDoCarrinho" />
 
   <div class="container ">
     <div class="row ms-5 ">
